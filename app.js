@@ -5,6 +5,7 @@ import {inquirerMenu,
     leerInput} from './helpers/inquirer.js';
 import {Tareas} from './models/tareas.js';
 import {Tarea} from './models/tarea.js';
+import {guardarDB} from './helpers/guardarArchivo.js';
 
 
 const main = async() => {
@@ -26,6 +27,7 @@ const main = async() => {
                 console.log( tareas.listadoArr);
             break;
         }
+        guardarDB( tareas.listadoArr);
 
         await pausa();
     } while ( opt !== '0');
